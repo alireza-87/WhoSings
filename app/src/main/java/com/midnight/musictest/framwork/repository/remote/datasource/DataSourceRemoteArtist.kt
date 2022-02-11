@@ -18,6 +18,14 @@ class DataSourceRemoteArtist @Inject constructor(private val api:ApiInterface,pr
     ): List<ArtistModelCore>? {
         return mapperRemote.toCore(api.getRelatedArtist(artistId,page,pageSize)?.message?.body?.artistList)
     }
+
+    override suspend fun getTopArtist(
+        page: Int,
+        pageSize: Int,
+        country: String
+    ): List<ArtistModelCore>? {
+        return mapperRemote.toCore(api.getTopArtists(page,pageSize,country)?.message?.body?.artistList)
+    }
 }
 
 private fun ArtistMapperRemote.toCore(trackList: List<ArtistItem>?): List<ArtistModelCore>? {

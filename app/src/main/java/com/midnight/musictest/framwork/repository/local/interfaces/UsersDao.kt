@@ -16,7 +16,7 @@ interface UsersDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(data:UserModelDb):Long
 
-    @Query("SELECT tbl_users.* , (SELECT SUM(is_win) from tbl_user_score where tbl_users.user_name=tbl_user_score.user_name) as totalUserScore  FROM tbl_users ORDER BY totalUserScore desc")
+    @Query("SELECT tbl_users.* , (SELECT SUM(score) from tbl_user_score where tbl_users.user_name=tbl_user_score.user_name) as totalUserScore  FROM tbl_users ORDER BY totalUserScore desc")
     fun getScoreList():List<QueryUsersScoresDb>
 
     @Query("UPDATE tbl_users SET active = 0 WHERE user_name = :userName")

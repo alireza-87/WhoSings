@@ -17,4 +17,7 @@ interface ApiInterface {
     @GET("track.lyrics.get")
     suspend fun getLyric(@Query("track_id") track_id: Long) : ResponseLyricList
 
+    @GET("chart.artists.get")
+    suspend fun getTopArtists(@Query("page") page:Int,@Query("page_size") pageSize:Int,@Query("country") country:String) : ResponseArtistList
+
 }

@@ -33,7 +33,7 @@ import kotlin.random.Random
 class QuizeFragment : Fragment() {
     private lateinit var binder:FragmentQuizeBinding
     private val viewModel:QuizeFragmentViewModel by viewModels()
-    var page=1
+    var page=0
     var trackId=-2L
     var artistList  : ArrayList<ArtistModelCore> = ArrayList()
     lateinit var answer : ArtistModelCore
@@ -105,6 +105,7 @@ class QuizeFragment : Fragment() {
                 is DataState.Success -> {
                     trackId = it.value.trackId
                     artistList.add(ArtistModelCore(it.value.artistId,it.value.artistName!!))
+                    Log.e("answer",it.value.artistName!!)
                     answer = ArtistModelCore(it.value.artistId,it.value.artistName!!)
                     viewModel.getTwoArtist(true,it.value.artistId)
                 }
@@ -154,7 +155,7 @@ class QuizeFragment : Fragment() {
 
     private fun nextQuestion(){
         clearQuestion()
-        viewModel.getOneTrack(true,page,10,"it",1)
+        viewModel.getOneTrack(true,page+1,10,"it",1)
         page+=1
     }
 
