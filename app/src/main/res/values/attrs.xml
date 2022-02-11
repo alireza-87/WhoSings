@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UserStatus">
+        <attr name="userName" format="string"/>
+        <attr name="userScore" format="string"/>
+        <attr name="textC" format="reference|color"/>
+    </declare-styleable>
+</resources>

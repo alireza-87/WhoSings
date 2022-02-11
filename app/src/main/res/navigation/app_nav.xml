@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/login_fragment"
+    android:id="@+id/app_nav">
+    <fragment
+        android:name="com.midnight.musictest.view.MainFragment"
+        android:id="@+id/main_fragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_fragment_to_login"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_quize_fragment"
+            app:destination="@id/quize_fragment" />
+    </fragment>
+
+    <fragment
+        android:name="com.midnight.musictest.view.LoginFragment"
+        android:id="@+id/login_fragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_fragment_to_main_fragment"
+            app:destination="@id/main_fragment"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.midnight.musictest.view.QuizeFragment"
+        android:id="@+id/quize_fragment"
+        android:label="QuizeFragment"
+        tools:layout="@layout/fragment_quize">
+        <argument
+            android:name="username"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="false"
+            />
+        <action
+            android:id="@+id/action_quize_fragment_to_main"
+            app:destination="@id/main_fragment" />
+    </fragment>
+
+</navigation>

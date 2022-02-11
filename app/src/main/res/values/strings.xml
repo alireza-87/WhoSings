@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MusicTest</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="user_name">Username</string>
+
+    <string name="error_user_exist">Username already exist!</string>
+
+    <string name="win">You Win</string>
+    <string name="fail">You Failed</string>
+    <string name="restart">Play Again</string>
+    <string name="go_to_main">Go to Main</string>
+
+    <string name="retry">Retry</string>
+    <string name="finish">Finish</string>
+
+    <string name="error_cant_get_q">Unable to get question!</string>
+
+    <string name="start">Are you ready?!</string>
+</resources>
